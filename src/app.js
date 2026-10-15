@@ -1,0 +1,10 @@
+const express = require("express");
+const authRouter = require("./routes/auth.routes");
+const fileRouter = require("./routes/file.routes");
+const errorMiddleware = require("./middlewares/error.middleware");
+const app = express();
+app.use(express.json());
+app.use("/api/v1", authRouter);
+app.use("/api/v1/files", fileRouter);
+app.use(errorMiddleware);
+module.exports = app;
