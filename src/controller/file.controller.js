@@ -10,7 +10,7 @@ async function uploadFile(req, res) {
       fileType: req.file.mimetype,
       filePath: req.file.path,
     });
-    res.status(400).json({
+    res.status(201).json({
       messsage: "upload file successfully",
     });
   } catch (error) {
